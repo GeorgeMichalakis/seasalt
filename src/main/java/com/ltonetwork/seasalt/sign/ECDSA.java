@@ -63,12 +63,6 @@ public class ECDSA implements Signer {
         SecureRandom secureRandom = new SecureRandom();
         return generateKeyPair(secureRandom);
     }
-
-    public KeyPair keyPairFromSeed(byte[] seed) {
-        SecureRandom secureRandom = new SecureRandom(seed);
-        return generateKeyPair(secureRandom);
-    }
-
     public KeyPair keyPairFromSecretKey(byte[] privateKey) {
         byte[] publicKey = publicKeyFromPrivateKey(privateKey);
         return new KeyPair(publicKey, privateKey);
